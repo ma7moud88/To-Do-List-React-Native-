@@ -100,7 +100,6 @@ const Todo: React.FC = () => {
     await AsyncStorage.setItem("todos", JSON.stringify(updatedTodos));
   };
 
-  // تحميل البيانات عند أول مرة
   useEffect(() => {
     const loadData = async () => {
       const savedTodos = await AsyncStorage.getItem("todos");
@@ -123,7 +122,7 @@ const Todo: React.FC = () => {
           onChangeText={setText}
           placeholder="Add Your Task"
           style={styles.input}
-          onSubmitEditing={add} // Enter key on keyboard
+          onSubmitEditing={add}
         />
 
         <Pressable style={styles.button} onPress={add}>
